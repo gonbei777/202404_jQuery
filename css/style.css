@@ -629,3 +629,17 @@ body {
 .pagetop:hover {
   opacity: .9;
 }
+
+.mouse-follow {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: fixed;
+  background-color: rgba(255 214 39 / .5);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  margin-left: -30px;
+  margin-top: -30px;
+  pointer-events: none;
+}
