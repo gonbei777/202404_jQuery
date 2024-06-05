@@ -22,7 +22,7 @@ const tweet = '<div class="tweet-content">イエローマジックデザイン�
 
 const $tweetCotainer = $('.tweet-container')
 
-$tweetCotainer.append(tweet)
+// $tweetCotainer.append(tweet)
 
 
 let display = true
@@ -59,6 +59,21 @@ $('.faq-openclose').on('click', e => {
   // $('.faq-openclose').off('click')
 
   $(e.target).toggleClass('is-open')
+
+  const $dd = $(e.target).parent().next()
+
+  // if ($dd.is(':visible')) {
+  //   // $dd.hide()
+  //   $dd.slideUp()
+  // } else {
+  //   // $dd.show()
+  //   $dd.slideDown()
+  // }
+  // $dd.toggle(!$dd.is(':visible'))
+  $dd.stop().slideToggle(!$dd.is(':visible'))
+
+  // dd部分(Answer)の表示
+  // $dd.show()
 })
 
 // 1回のみ反応
@@ -128,3 +143,67 @@ updateMouseFollowPosition()
 function lerp(c, d, e = 0.1) {
   return c + (d - c) * e
 }
+
+$('.mv-copy').on('click', e => {
+  $(e.target)
+    .animate({
+      'font-size': 40
+    }, 1000, 'swing')
+    .animate({ 'font-weight': '400' })
+
+  $(e.target).animate({
+    'width': 700
+  }, {
+    duration: 1000,
+    easing: 'swing',
+    step: function (num) {
+      console.log(num)
+    }
+  })
+})
+
+$('.pagetop').on('click', () => {
+  // const y = $('.works')[0].offsetTop
+  $('html').animate({
+    scrollTop: 0
+  })
+})
+
+$('.tweet-show').on('click', () => {
+  $('.tweet-content-ls16').fadeIn(1000, function () {
+    $(this).css('background', 'orange')
+  })
+})
+
+$('.tweet-hide').on('click', () => {
+  $('.tweet-content-ls16').fadeOut(1000)
+})
+
+
+const tweets = [
+  '「DX支援」に当社のサービスがお役に立てるかもしれません。',
+  '良いデザインはどっち？ クイズを解くだけで、デザインの知識がどんどん身につく画期的なデザイン手法を紹介',
+  '現場監督からWebデザイナーに転職。建築現場責任者として活躍されていた川本さんのキャリアチェンジの理由は？',
+  'Webデザインの勉強やトレンドキャッチに役立つSNSアカウントおすすめ25選'
+];
+
+const $tweetContent = $('.tweet-content-ls19')
+let counter = 0
+$tweetContent.text(tweets[counter]).fadeIn()
+
+// setTimeout(() => { }, 3000)
+setInterval(() => {
+  $tweetContent.fadeOut(400, () => {
+    counter++
+    if (counter === tweets.length) {
+      counter = 0
+    }
+    $tweetContent.text(tweets[counter]).fadeIn()
+  })
+}, 3000)
+
+
+// $(window).scroll()
+$(window).on('scroll', () => {
+  console.log('スクロール')
+})
