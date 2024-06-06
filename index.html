@@ -12,12 +12,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700&family=Work+Sans:wght@100;200;400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700&family=Work+Sans:wght@100;200;400;700&family=Nothing+You+Could+Do&display=swap"
     rel="stylesheet">
 
+  <!-- slick -->
+  <link rel="stylesheet" href="js/slick/slick.css">
+  <link rel="stylesheet" href="js/slick/slick-theme.css">
+
   <link rel="stylesheet" href="css/style.css">
-
-
 
 </head>
 
@@ -25,6 +27,11 @@
   <header class="site-header">
     <div class="container site-header-container">
       <p class="site-header-logo"><a href="#"><i class="ri-edit-circle-fill"></i>Yellow Magic Design</a></p>
+
+      <button class="site-header-navbtn" type="button">
+        <span></span>
+      </button>
+
       <nav class="site-header-nav">
         <ul>
           <li><a href="#">Home</a></li>
@@ -94,6 +101,7 @@
       <div class="container">
         <h2 class="section-head">Our Works</h2>
         <div class="works-container">
+          <!--1枚目のパネル-->
           <section class="works-panel">
             <div class="works-thumb">
               <img src="https://picsum.photos/id/311/900/600" alt="Antique Furniture Shop">
@@ -107,7 +115,85 @@
               </p>
             </div>
           </section>
+          <!--2枚目のパネル-->
+          <section class="works-panel">
+            <div class="works-thumb">
+              <img src="https://picsum.photos/id/20/900/600" alt="Logo Design Book">
+            </div>
+            <div class="works-detail">
+              <h3 class="works-title">Logo Design Book</h3>
+              <p class="works-cat">Graphic Design</p>
+              <p class="works-desc">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量...</p>
+              <p class="works-link">
+                <a href="#" class="btn btn-primary">詳しく見る</a>
+              </p>
+            </div>
+          </section>
+          <!--3枚目のパネル-->
+          <section class="works-panel">
+            <div class="works-thumb">
+              <img src="https://picsum.photos/id/250/900/600" alt="First Photo Gallery">
+            </div>
+            <div class="works-detail">
+              <h3 class="works-title">First Photo Gallery</h3>
+              <p class="works-cat">Other</p>
+              <p class="works-desc">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量...</p>
+              <p class="works-link">
+                <a href="#" class="btn btn-primary">詳しく見る</a>
+              </p>
+            </div>
+          </section>
         </div>
+        <button class="pause" type="button">スライドを一時停止</button>
+      </div>
+    </section>
+
+    <section class="team section">
+      <h2 class="section-head">Our Team</h2>
+      <div class="container">
+        <section class="teamcrew-container">
+          <div class="teamcrew-imgarea">
+            <div class="teamcrew-img">
+              <img src="https://picsum.photos/id/823/800/1200" alt="" class="teamcrew-img__miki lax-target">
+            </div>
+            <p class="teamcrew-title">Designer</p>
+          </div>
+          <div class="teamcrew-info">
+            <p class="teamcrew-catch">
+              趣味半分、仕事半分。クリエイティブ100％
+            </p>
+            <p class="teamcrew-info__desc">
+              この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。<br>
+              この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+            </p>
+            <h3 class="teamcrew-info__name">
+              Miki Matsubara
+              <span>松原みき</span>
+            </h3>
+          </div>
+
+        </section>
+        <section class="teamcrew-container">
+          <div class="teamcrew-imgarea">
+            <div class="teamcrew-img">
+              <img src="https://picsum.photos/id/838/800/1200" alt="" class="teamcrew-img__minako lax-target">
+            </div>
+            <p class="teamcrew-title">Developer</p>
+          </div>
+          <div class="teamcrew-info">
+            <p class="teamcrew-catch">
+              何万の人が使うサービスで私のコードが活きる喜びと責任
+            </p>
+            <p class="teamcrew-info__desc">
+              この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。<br>
+              この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+            </p>
+            <h3 class="teamcrew-info__name">
+              Minako Yoshida
+              <span>吉田美奈子</span>
+            </h3>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -208,6 +294,8 @@
 
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/inview/jQuery-inView.min.js"></script>
+  <script src="js/slick/slick.min.js"></script>
+  <script src="js/lax/lax.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 

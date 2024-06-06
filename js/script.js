@@ -9,14 +9,14 @@ $('.site-header-nav li a ').css('color', 'blue')
 
 $('.mv-copy').next().css('text-decoration', 'underline')
 
-$('.works-panel').find('.works-title').css('border-bottom', '2px solid #000')
+// $('.works-panel').find('.works-title').css('border-bottom', '2px solid #000')
 
-$('.works-container')
-  .css('border', '4px dotted orange')
-  .find('.works-thumb')
-  .css('opacity', '0.5')
-  .next()
-  .css('background-color', 'green')
+// $('.works-container')
+//   .css('border', '4px dotted orange')
+//   .find('.works-thumb')
+//   .css('opacity', '0.5')
+//   .next()
+//   .css('background-color', 'green')
 
 const tweet = '<div class="tweet-content">イエローマジックデザインワークショップを開催しました。「普段何気なく使っているモノの見方を変えて見る」をテーマに、参加者のいろんなアイデアと作品が生まれました。</div>';
 
@@ -216,4 +216,70 @@ $(window).on('scroll', () => {
   if (isInView) {
     $serviceList.addClass('in-view')
   }
+})
+
+// slick
+$('.works-container').slick({
+  autoplay: true,
+  autoplaySpeed: 4000,
+  // pauseOnHover: false,
+  slidesToShow: 2,
+  speed: 800,
+  dots: true,
+  responsive: [
+    // 1000px未満
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 1
+      }
+    },
+  ],
+})
+
+$('.works-container').on('afterChange', (e, slick, current) => {
+  console.log(e)
+  console.log(slick)
+  console.log(current)
+})
+
+$('.pause').on('click', () => {
+  $('.works-container').slick('slickPause')
+})
+
+// lax.js 
+$(window).on('load', () => {
+  // lax.jsの起動
+  lax.init()
+
+  // ドライバーの設定
+  lax.addDriver(
+    'parallaxY',
+    () => {
+      // console.log(window.scrollY)
+      return window.scrollY
+    }
+  )
+
+  // 要素の追加
+  lax.addElements(
+    '.lax-target',
+    {
+      parallaxY: {
+        translateY: [
+          ['elInY', 'elOutY'], //ドライバーの値
+          //要素の値
+          {
+            767: [-80, 60], //767以下
+            768: [-80, 100] //768以上
+          }
+        ],
+        opacity: [
+          ['elInY', 'elInY+300'],
+          [0, 1]
+        ]
+      }
+    }
+  )
+
 })
