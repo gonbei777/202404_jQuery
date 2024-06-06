@@ -203,7 +203,17 @@ setInterval(() => {
 }, 3000)
 
 
+const $serviceList = $('.service-list')
+let isInView = false
 // $(window).scroll()
 $(window).on('scroll', () => {
-  console.log('スクロール')
+  if (isInView) return
+
+  console.log('スクロール検知中')
+
+  isInView = $serviceList.inView('topOnly', 150)
+
+  if (isInView) {
+    $serviceList.addClass('in-view')
+  }
 })

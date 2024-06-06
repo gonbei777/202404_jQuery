@@ -643,3 +643,22 @@ body {
   margin-top: -30px;
   pointer-events: none;
 }
+
+.service-card {
+  transition: .6s;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.service-list.in-view .service-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-list li:nth-of-type(2) .service-card {
+  transition-delay: .4s;
+}
+
+.service-list li:nth-of-type(3) .service-card {
+  transition-delay: .8s;
+}
